@@ -1,0 +1,10 @@
+{
+  "uuid": "just-clipboard@0emirhan",
+  "name": "Just Clipboard",
+  "description": "Ephemeral in-memory clipboard history for GNOME Shell. Secret detection with blur, auto-clear on screen lock, rich content (text, images, file URIs), transformations (base64/URL/JSON/hash/case/trim/defang), snippets and stacks. Nothing ever touches disk.",
+  "shell-version": ["47", "48"],
+  "url": "https://github.com/0emirhan/just-clipboard",
+  "settings-schema": "org.gnome.shell.extensions.just-clipboard",
+  "gettext-domain": "just-clipboard",
+  "version-name": "1.0.0"
+}

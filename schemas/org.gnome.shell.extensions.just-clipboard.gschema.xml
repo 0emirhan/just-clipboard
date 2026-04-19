@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.just-clipboard"
+          path="/org/gnome/shell/extensions/just-clipboard/">
+
+    <key name="schema-version" type="i">
+      <default>1</default>
+      <summary>Internal schema version (bumped on migrations)</summary>
+    </key>
+
+    <!-- History -->
+    <key name="max-entries" type="i">
+      <default>50</default>
+      <summary>Maximum number of in-memory entries</summary>
+    </key>
+    <key name="private-mode" type="b">
+      <default>false</default>
+      <summary>Pause capture</summary>
+    </key>
+
+    <!-- Capture -->
+    <key name="rich-types" type="b">
+      <default>true</default>
+      <summary>Capture images (PNG/JPEG/WebP) and file URIs besides text</summary>
+    </key>
+    <key name="max-image-kb" type="i">
+      <default>2048</default>
+      <summary>Max image size to capture (KB)</summary>
+    </key>
+    <key name="capture-primary" type="b">
+      <default>false</default>
+      <summary>Also capture the primary (middle-click) selection</summary>
+    </key>
+    <key name="app-blacklist" type="as">
+      <default>['org.keepassxc.KeePassXC','KeePassXC','Bitwarden','bitwarden','1Password','1password']</default>
+      <summary>Never capture while these WM_CLASS / app-ids are focused</summary>
+    </key>
+
+    <!-- Expiration -->
+    <key name="auto-expire-enabled" type="b">
+      <default>false</default>
+      <summary>Delete non-pinned entries after a delay</summary>
+    </key>
+    <key name="auto-expire-minutes" type="i">
+      <default>60</default>
+      <summary>Auto-expire delay (minutes)</summary>
+    </key>
+    <key name="screensaver-clear" type="b">
+      <default>true</default>
+      <summary>Clear all non-pinned entries when the screen locks</summary>
+    </key>
+
+    <!-- Secret detection -->
+    <key name="detect-secrets" type="b">
+      <default>true</default>
+      <summary>Detect secrets (API keys, JWT, private keys, IBAN, cards, etc.)</summary>
+    </key>
+    <key name="sensitive-expire-seconds" type="i">
+      <default>60</default>
+      <summary>Lifetime of detected secrets (seconds, 0 = never)</summary>
+    </key>
+    <key name="reveal-on-hover" type="b">
+      <default>true</default>
+      <summary>Blur sensitive entries in the popup; reveal on hover</summary>
+    </key>
+
+    <!-- Keybindings -->
+    <key name="toggle-shortcut" type="as">
+      <default><![CDATA[['<Super><Shift>v']]]></default>
+      <summary>Open/close the clipboard popup</summary>
+    </key>
+    <key name="quick-paste-shortcuts" type="b">
+      <default>true</default>
+      <summary>Enable Super+Alt+1..9 to paste entry N directly</summary>
+    </key>
+    <key name="quick-paste-1" type="as"><default><![CDATA[['<Super><Alt>1']]]></default><summary>Paste entry 1</summary></key>
+    <key name="quick-paste-2" type="as"><default><![CDATA[['<Super><Alt>2']]]></default><summary>Paste entry 2</summary></key>
+    <key name="quick-paste-3" type="as"><default><![CDATA[['<Super><Alt>3']]]></default><summary>Paste entry 3</summary></key>
+    <key name="quick-paste-4" type="as"><default><![CDATA[['<Super><Alt>4']]]></default><summary>Paste entry 4</summary></key>
+    <key name="quick-paste-5" type="as"><default><![CDATA[['<Super><Alt>5']]]></default><summary>Paste entry 5</summary></key>
+    <key name="quick-paste-6" type="as"><default><![CDATA[['<Super><Alt>6']]]></default><summary>Paste entry 6</summary></key>
+    <key name="quick-paste-7" type="as"><default><![CDATA[['<Super><Alt>7']]]></default><summary>Paste entry 7</summary></key>
+    <key name="quick-paste-8" type="as"><default><![CDATA[['<Super><Alt>8']]]></default><summary>Paste entry 8</summary></key>
+    <key name="quick-paste-9" type="as"><default><![CDATA[['<Super><Alt>9']]]></default><summary>Paste entry 9</summary></key>
+
+    <!-- Stacks & snippets -->
+    <key name="stacks" type="s">
+      <default>'{"default":{"name":"default"}}'</default>
+      <summary>Named clipboard stacks (JSON). The active stack receives captures.</summary>
+    </key>
+    <key name="active-stack" type="s">
+      <default>'default'</default>
+      <summary>Currently active stack name</summary>
+    </key>
+    <key name="snippets" type="s">
+      <default>'[]'</default>
+      <summary>User-defined snippets (JSON). Supports {date}, {time}, {datetime}, {clipboard}, {stack}, {uuid}, {n}.</summary>
+    </key>
+
+  </schema>
+</schemalist>

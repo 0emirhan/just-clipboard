@@ -1,0 +1,10 @@
+schemas/gschemas.compiled
+*.shell-extension.zip
+*.log
+/tmp/
+.venv/
+node_modules/
+__pycache__/
+.vscode/
+.idea/
+*.swp
